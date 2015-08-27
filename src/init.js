@@ -28,6 +28,15 @@ $(document).ready(function(){
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    dancers.push(dancer);
   });
+
+  $(".addActions").on("click", function(event){
+    var dancerActionFunctionName = $(this).data("dancer-action-function-name");
+    var dancerActionFunction = window[dancerActionFunctionName];
+    console.dir(dancerActionFunction)
+    dancerActionFunction();
+  });
+
 });
 

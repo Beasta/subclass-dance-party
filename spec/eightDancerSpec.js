@@ -14,7 +14,7 @@ describe("eightDancer", function() {
   });
 
   it("should have a step function that makes its node blink", function() {
-    sinon.spy(eightDancer, 'setPosition');
+    sinon.spy(eightDancer, 'step');
     eightDancer.step();
     expect(eightDancer.step.called).to.be.true;
   });
