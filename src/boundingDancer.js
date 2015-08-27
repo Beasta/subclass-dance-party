@@ -19,7 +19,6 @@ makeBoundingDancer.prototype.step = function(){
   }else{
     this.currentTop = this.startTop + $("body").height() * 0.05;
   }
-  console.log($("body").height());
   this.setPosition(this.currentTop, this.currentLeft);
 
 }

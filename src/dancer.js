@@ -23,10 +23,25 @@ makeDancer.prototype.setPosition = function(top, left){
   // Use css top and left properties to position our <span> tag
   // where it belongs on the page. See http://api.jquery.com/css/
   //
+  this.setColor();
   var styleSettings = {
     top: top,
     left: left
   };
   this.$node.css(styleSettings);
+};
+
+makeDancer.prototype.setColor = function(){
+  // Use css top and left properties to position our <span> tag
+  // where it belongs on the page. See http://api.jquery.com/css/
+  //
+  var red = (Math.floor(Math.random()*256)).toString(16);
+  var green = (Math.floor(Math.random()*256)).toString(16);
+  var blue = (Math.floor(Math.random()*256)).toString(16);
+  var pad = '00';
+  red = pad.substring(0,pad.length - red.length) + red;
+  green = pad.substring(0,pad.length - green.length) + green;
+  blue = pad.substring(0,pad.length - blue.length) + blue;
+  this.$node.css('border','10px solid #' + red + blue + green);
 };
 
